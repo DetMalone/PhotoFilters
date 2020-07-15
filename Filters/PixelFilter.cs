@@ -1,16 +1,17 @@
-﻿using System;
+﻿using MyPhotoshop.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace MyPhotoshop
 {
-    abstract public class TemplateFilter : IFilter
+    abstract public class PixelFilter<TParameters> : ParametrizedFilter<TParameters>
+        where TParameters : IParameters, new()
     {
-        public abstract ParameterInfo[] GetParameters();
-        protected abstract Pixel ProcessPixel(Pixel original, double[] parameters);
+        protected abstract Pixel ProcessPixel(Pixel original, TParameters parameters);
 
-        public Photo Process(Photo original, double[] parameters)
+        public override Photo Process(Photo original, TParameters parameters)
         {
             var result = new Photo(original.Width, original.Height);
             for (int x = 0; x < result.Width; x++)
