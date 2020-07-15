@@ -8,9 +8,10 @@ namespace MyPhotoshop
         [STAThread]
 		public static void Main (string[] args)
 		{
-			var window=new MainWindow();
-			window.AddFilter (new LighteningFilter());
-			Application.Run (window);
+			var window = new MainWindow();
+			window.AddFilter(new LighteningFilter());
+			window.AddFilter(new GrayingFilter());
+			Application.Run(window);
 		}
 	}
 }
