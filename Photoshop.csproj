@@ -53,8 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Pixel.cs" />
+    <Compile Include="Filters\Tranform\FreeTransformer.cs" />
+    <Compile Include="Filters\Tranform\RotateTransformer.cs" />
+    <Compile Include="Filters\Tranform\ITransformer.cs" />
+    <Compile Include="Filters\Tranform\RotatingParameters.cs" />
+    <Compile Include="Filters\Tranform\TransformFilter.cs" />
+    <Compile Include="Filters\Tranform\TransformFilter{TParameters}.cs" />
     <Compile Include="Filters\EmptyParameters.cs" />
-    <Compile Include="Filters\GrayingFilter.cs" />
     <Compile Include="Filters\IParameters.cs" />
     <Compile Include="Filters\LighteningParameters.cs" />
     <Compile Include="Filters\ParameterInfo.cs" />
@@ -67,14 +72,12 @@
     <Compile Include="Data\Photo.cs" />
     <Compile Include="Filters\IFilter.cs" />
     <Compile Include="Data\Convertors.cs" />
-    <Compile Include="Filters\LighteningFilter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="cat.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

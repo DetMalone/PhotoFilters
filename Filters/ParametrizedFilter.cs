@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyPhotoshop.Filters
+namespace MyPhotoshop
 {
     abstract public class ParametrizedFilter<TParameters> : IFilter
         where TParameters : IParameters, new()
@@ -21,5 +21,11 @@ namespace MyPhotoshop.Filters
         }
 
         abstract public Photo Process(Photo original, TParameters parameters);
+
+        protected string name;
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }
